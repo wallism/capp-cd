@@ -1,0 +1,43 @@
+name: Trigger auto deployment for second-api-capp-app-two
+
+# When this action will be executed
+on:
+  # Automatically trigger it when detected changes in repo
+  push:
+    branches: 
+      [ master ]
+    paths:
+    - '**'
+    - '.github/workflows/second-api-capp-app-two-AutoDeployTrigger-6798bce7-eaaf-4302-8128-1aad6db9af7d.yml'
+
+  # Allow manual trigger 
+  workflow_dispatch:
+      
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@v2
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.SECONDAPICAPPAPPTWO_AZURE_CREDENTIALS }}
+
+      - name: Build and push container image to registry
+        uses: azure/container-apps-deploy-action@v2
+        with:
+          appSourcePath: ${{ github.workspace }} 
+          registryUrl: apiwebapp20240307151212.azurecr.io
+          registryUsername: ${{ secrets.SECONDAPICAPPAPPTWO_REGISTRY_USERNAME }}
+          registryPassword: ${{ secrets.SECONDAPICAPPAPPTWO_REGISTRY_PASSWORD }}
+          containerAppName: second-api-capp-app-two
+          resourceGroup: api-container-app-rg
+          imageToBuild: apiwebapp20240307151212.azurecr.io/second-api-capp-app-two:${{ github.sha }}
+          
+            
+
+     
+
