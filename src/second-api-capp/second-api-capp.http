@@ -1,0 +1,6 @@
+@second_api_capp_HostAddress = http://localhost:5135
+
+GET {{second_api_capp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

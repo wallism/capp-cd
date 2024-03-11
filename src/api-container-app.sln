@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api-container-app", "api-container-app\api-container-app.csproj", "{DA1B16A5-8560-49A8-AE53-755607157D2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api-container-app", "api-container-app\api-container-app.csproj", "{DA1B16A5-8560-49A8-AE53-755607157D2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "second-api-capp", "second-api-capp\second-api-capp.csproj", "{D91FFED9-BF14-44DE-ADE6-4D5CEB7E36E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DA1B16A5-8560-49A8-AE53-755607157D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA1B16A5-8560-49A8-AE53-755607157D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA1B16A5-8560-49A8-AE53-755607157D2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D91FFED9-BF14-44DE-ADE6-4D5CEB7E36E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D91FFED9-BF14-44DE-ADE6-4D5CEB7E36E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D91FFED9-BF14-44DE-ADE6-4D5CEB7E36E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D91FFED9-BF14-44DE-ADE6-4D5CEB7E36E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
