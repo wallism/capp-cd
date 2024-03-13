@@ -26,7 +26,7 @@ jobs:
         with:
           creds: ${{ secrets.APICONTAINERAPPAPP2024030815_AZURE_CREDENTIALS }}
 
-      - name: Build and push container image to registry
+      - name: Build and push one
         uses: azure/container-apps-deploy-action@v2
         with:
           appSourcePath: ${{ github.workspace }}/src
@@ -38,7 +38,16 @@ jobs:
           resourceGroup: api-container-app-rg
           imageToBuild: apiwebapp20240307151212.azurecr.io/api-container-app-app-2024030815:${{ github.sha }}
           
-            
-
+      - name: Build and push two
+        uses: azure/container-apps-deploy-action@v2
+        with:
+          appSourcePath: ${{ github.workspace }}/src
+          dockerfilePath: second-api-capp/Dockerfile
+          registryUrl: apiwebapp20240307151212.azurecr.io
+          registryUsername: ${{ secrets.APICONTAINERAPPAPP2024030815_REGISTRY_USERNAME }}
+          registryPassword: ${{ secrets.APICONTAINERAPPAPP2024030815_REGISTRY_PASSWORD }}
+          containerAppName: second-api-capp-app-two
+          resourceGroup: api-container-app-rg
+          imageToBuild: apiwebapp20240307151212.azurecr.io/second-api-capp-app-two:${{ github.sha }}
+        
      
-
